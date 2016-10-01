@@ -51,9 +51,12 @@ public class cameraController : MonoBehaviour {
         //switch to 3dperson camera
         if (camAngle.Equals(3) && cam.transform.position.Equals(camThrird.transform.position) || camAngle.Equals(-1))
         {
-            //enable playermovement and camera script
+            //enable playermovement, camera, animations, and shooting
             cam.GetComponent<UserCamera>().enabled = true;
             GameObject.Find("Player").GetComponent<playerMove>().enabled = true;
+            GameObject.Find("Player").GetComponent<playerAnimate>().enabled = true;
+            GameObject.Find("Player").GetComponent<HashID>().enabled = true;
+            GameObject.Find("Player").GetComponent<playerShoot>().enabled = true;
             //gameObject.GetComponent<cameraController>().enabled = false;
             camAngle = -1;
         }
@@ -61,6 +64,9 @@ public class cameraController : MonoBehaviour {
         {
             cam.GetComponent<UserCamera>().enabled = false;
             GameObject.Find("Player").GetComponent<playerMove>().enabled = false;
+            GameObject.Find("Player").GetComponent<playerAnimate>().enabled = false;
+            GameObject.Find("Player").GetComponent<HashID>().enabled = false;
+            GameObject.Find("Player").GetComponent<playerShoot>().enabled = false;
             //gameObject.GetComponent<cameraController>().enabled = true;
         }
 

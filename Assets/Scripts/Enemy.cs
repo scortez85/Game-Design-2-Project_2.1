@@ -60,6 +60,8 @@ public class Enemy : MonoBehaviour {
         }
 
         healthText.GetComponent<TextMesh>().text = health.ToString();
+        //healthText.transform.LookAt(Camera.current.transform);
+        healthText.transform.rotation = GameObject.Find("Player").transform.rotation;
     }
 
     void OnCollisionEnter(Collision col)

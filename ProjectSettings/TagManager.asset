@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - netManager
   - Bullet
+  - Tower
+  - Nugget
+  - Terrain
   layers:
   - Default
   - TransparentFX

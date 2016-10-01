@@ -3,6 +3,7 @@ using System.Collections;
 
 public class cameraController : MonoBehaviour {
     private GameObject cam, camThrird;
+    public GameObject[] uiButtonsToHide;
     private Vector3 topDownCamPos;
     private Quaternion topDownCamRot;
     public int camAngle;
@@ -33,19 +34,22 @@ public class cameraController : MonoBehaviour {
             cam.transform.rotation = topDownCamRot;
             
         }
-        else if (num.Equals(3))
+        else if (num.Equals(3) || num.Equals(-1))
         {
             cam.transform.position = Vector3.MoveTowards(cam.transform.position, camThrird.transform.position, camSpeed * Time.deltaTime);
             cam.transform.rotation = camThrird.transform.rotation;
             cam.transform.LookAt(GameObject.Find("Player").transform.position);
+            GetComponent<onClickSelect>().enabled = false;
+            for (int k = 0; k < uiButtonsToHide.Length; k++)
+            {
+                uiButtonsToHide[k].SetActive(true);
+            }
         }
      
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.B))//this is a test and only a test
-            camAngle = 3;
         
         setCamera(camAngle);
         //switch to 3dperson camera
@@ -57,6 +61,11 @@ public class cameraController : MonoBehaviour {
             GameObject.Find("Player").GetComponent<playerAnimate>().enabled = true;
             GameObject.Find("Player").GetComponent<HashID>().enabled = true;
             GameObject.Find("Player").GetComponent<playerShoot>().enabled = true;
+            GetComponent<onClickSelect>().enabled = false;
+            for (int k=0;k<uiButtonsToHide.Length;k++)
+            {
+                uiButtonsToHide[k].SetActive(false);
+            }
             //gameObject.GetComponent<cameraController>().enabled = false;
             camAngle = -1;
         }
@@ -67,6 +76,11 @@ public class cameraController : MonoBehaviour {
             GameObject.Find("Player").GetComponent<playerAnimate>().enabled = false;
             GameObject.Find("Player").GetComponent<HashID>().enabled = false;
             GameObject.Find("Player").GetComponent<playerShoot>().enabled = false;
+            GetComponent<onClickSelect>().enabled = true;
+            for (int k = 0; k < uiButtonsToHide.Length; k++)
+            {
+                uiButtonsToHide[k].SetActive(true);
+            }
             //gameObject.GetComponent<cameraController>().enabled = true;
         }
 

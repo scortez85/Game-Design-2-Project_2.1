@@ -28,4 +28,12 @@ public class playerMove : MonoBehaviour {
         transform.Rotate(0, horiz * Time.deltaTime * turning, 0);
 	
 	}
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag.Equals("Nugget"))
+        {
+            Destroy(col.gameObject);
+            GameObject.Find("GameController").GetComponent<gameControl>().setNugget(col.gameObject.GetComponent<nuggetValues>().nuggetValue);
+        }
+    }
 }

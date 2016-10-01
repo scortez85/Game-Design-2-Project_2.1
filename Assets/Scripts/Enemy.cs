@@ -3,11 +3,13 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
     public Transform target;
-    private int health, damage;
+    private int health, damage,nuggetMin,nuggetMax;
     private float speed;
     private string enemyType;
     private NavMeshAgent agent;
-    public GameObject healthText;
+    public GameObject healthText,nugget;
+
+
     public Enemy()
     {
         switch(enemyType)
@@ -40,6 +42,8 @@ public class Enemy : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
         target = GameObject.Find("EnemyGoal").transform;
+        nuggetMin = 1;
+        nuggetMax = 5;
     }
     void Update()
     {
@@ -51,6 +55,7 @@ public class Enemy : MonoBehaviour {
                 if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                 {
                     Destroy(gameObject);
+                    GameObject.Find("GameController").GetComponent<gameControl>().setHealth(-1);
                 }
             }
         }
@@ -70,6 +75,7 @@ public class Enemy : MonoBehaviour {
         {
             health-=col.gameObject.GetComponent<Bullet>().GetDamage();
             col.gameObject.GetComponent<Bullet>().SubrtractHealth(1);
+            GameObject.Find("GameController").GetComponent<gameControl>().setScore(col.gameObject.GetComponent<Bullet>().getScoreValue());
         }
     }
 
@@ -81,5 +87,14 @@ public class Enemy : MonoBehaviour {
     public int GetHealth()
     {
         return health;
+    }
+    public void OnDestroy()
+    {
+        //send value to gamecontroller
+        {
+            GameObject.Find("GameController").GetComponent<gameControl>().kills += 1;
+           GameObject nuggetObj = (GameObject) Instantiate(nugget, transform.position, transform.rotation);
+            nuggetObj.GetComponent<nuggetValues>().nuggetValue = Random.Range(nuggetMin, nuggetMax);
+        }
     }
 }

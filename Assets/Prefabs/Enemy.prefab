@@ -186,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   healthText: {fileID: 1000013885296574}
+  nugget: {fileID: 1000012613954178, guid: adfb781663538e6489152941a3720685, type: 2}
 --- !u!195 &195000011563520134
 NavMeshAgent:
   m_ObjectHideFlags: 1

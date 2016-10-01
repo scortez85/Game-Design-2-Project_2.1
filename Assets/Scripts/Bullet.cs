@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour {
 
     private int damage;
     private int health;
+    private int scoreValue;
 
     public Bullet()
     {
@@ -42,4 +43,13 @@ public class Bullet : MonoBehaviour {
     {
         this.health -= health;
     }
+    public void setScoreValue(int value)
+    {
+        this.scoreValue = value;
+    }
+    public int getScoreValue()
+    {
+        return this.scoreValue;
+    }
+    
 }

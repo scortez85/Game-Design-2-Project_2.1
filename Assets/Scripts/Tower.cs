@@ -7,12 +7,14 @@ public class Tower : MonoBehaviour {
     private int damage; // per shot damage measure in health removed
     private int range; // attack range
     private int speed; // attack speed measured in shots per second
+    private int towerScoreValue; //score multiplier for tower
     private int timeSinceLastShot;
     private AttackPattern pattern;
     private List<Upgrade> availableUpgrades; // all upgrades available to be added to this tower
     private List<Upgrade> activeUpgrades; // all upgrades currently active on this tower
     public GameObject bulletPrefab;
     public GameObject towerRange;
+    public bool selected;
 
     public enum AttackPattern {First, Last, Close, Strong};
 
@@ -32,6 +34,7 @@ public class Tower : MonoBehaviour {
         pattern = AttackPattern.First;
         activeUpgrades = new List<Upgrade>();
         availableUpgrades = new List<Upgrade>();
+        towerScoreValue = damage + 25;
     }
 
 	// Use this for initialization
@@ -45,6 +48,11 @@ public class Tower : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
+        //show range
+        if (selected)
+            towerRange.GetComponent<MeshRenderer>().enabled = true;
+        else towerRange.GetComponent<MeshRenderer>().enabled = false;
+
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         bool hasTarget = false;
         GameObject target = new GameObject(); // might need to find a better way to instantiate an empty object
@@ -137,6 +145,7 @@ public class Tower : MonoBehaviour {
                 GameObject bullet = (GameObject)Instantiate(bulletPrefab, transform.position, transform.rotation);
                 bullet.GetComponent<Rigidbody>().velocity = transform.forward * 200.0f;
                 bullet.GetComponent<Bullet>().SetDamage(damage);
+                bullet.GetComponent<Bullet>().setScoreValue(towerScoreValue);
                 Destroy(bullet, 2);
                 timeSinceLastShot = 60 / speed;
             }

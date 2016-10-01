@@ -4,7 +4,7 @@ using System.Collections;
 public class enemySpawn : MonoBehaviour {
 
     public int[] spawnWaves;
-    private int spawnSpeed, numEnemies, currentWave; 
+    public int spawnSpeed, numEnemies, currentWave; 
     public int maxNumEnemies, spawnSpeedInterval, totalNumEnemies;
     public GameObject enemPrefab;
     private GameObject[] enem;

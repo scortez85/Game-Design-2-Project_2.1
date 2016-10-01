@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012101364686}
   - 114: {fileID: 114000012487975254}
+  - 114: {fileID: 114000014043180520}
+  - 114: {fileID: 114000011638633262}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -40,6 +42,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &114000011638633262
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011188331502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f7102137b7ce6418d736ca22b68731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 0
+  damage: 0
+  speed: 0
+  health: 100
+  score: 0
+  kills: 0
+  nuggets: 0
+  healthText: {fileID: 0}
+  scoreText: {fileID: 0}
+  killText: {fileID: 0}
+  towerText: {fileID: 0}
+  nuggetText: {fileID: 0}
 --- !u!114 &114000012487975254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -51,4 +76,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17715d877c0d9454491bbbae01921c12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiButtonsToHide:
+  - {fileID: 0}
+  - {fileID: 0}
   camAngle: 0
+--- !u!114 &114000014043180520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011188331502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9360eb853e750de4aa76d1dace854e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placeableObj: 
+  tower: {fileID: 0}

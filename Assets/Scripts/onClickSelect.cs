@@ -5,20 +5,36 @@ public class onClickSelect : MonoBehaviour {
 
     public RaycastHit hit,oldHit;
     public Ray ray;
-    public string placeableObj;
+    public GameObject[] objProps,placableObjs;
+    public int objIndex = -1;
+    //public string placeableObj;
     public GameObject tower;
-	void Start () {
+    public GameObject[] propList;
+
+    void Start () {
 	
 	}
-    public void setPlaceableObj(string name)
+    public void setPlaceableObj(int num)
     {
-        placeableObj = name;
+        //placeableObj = name;
+        objIndex = num;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (!placeableObj.Equals(""))
+        //check for props
+        propList = GameObject.FindGameObjectsWithTag("Prop");
+        //remove props by right click
+        if (Input.GetMouseButton(1))
+            for (int k = 0; k < propList.Length; k++)
+                Destroy(propList[k]);
+
+        if (objIndex>=0)
+        {
             makeObj();
+        }
+        //if (!placeableObj.Equals(""))
+           // makeObj();
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -41,13 +57,27 @@ public class onClickSelect : MonoBehaviour {
 	}
     void makeObj()
     {
+        
+        Vector3 propPos = new Vector3(Input.mousePosition.x, 3.84f, Input.mousePosition.z);
+        if (propList.Length.Equals(0))
+        {
+            GameObject prop = (GameObject)Instantiate(objProps[objIndex], propPos, Quaternion.identity);
+            prop.name = "Prop";
+            prop.tag = "Prop";
+            prop.GetComponent<selectableProp>().propPos = propPos;
+            prop.GetComponent<selectableProp>().obj = placableObjs[objIndex];
+            objIndex = -1;
+        }
+        /*
         Vector3 propPos = new Vector3(Input.mousePosition.x, 3.84f, Input.mousePosition.z);
         if (placeableObj.Equals("Tower"))
         {
-            placeableObj = "";
+            placeableObj = "prop";
             GameObject towerProp = (GameObject)Instantiate(tower, propPos, Quaternion.identity);
+            towerProp.name = "prop";
             towerProp.GetComponent<selectableProp>().propPos = propPos;
         }
+        */
 
     }
 }

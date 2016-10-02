@@ -10,6 +10,9 @@ TagManager:
   - Tower
   - Nugget
   - Terrain
+  - Prop
+  - Path
+  - Placeable
   layers:
   - Default
   - TransparentFX

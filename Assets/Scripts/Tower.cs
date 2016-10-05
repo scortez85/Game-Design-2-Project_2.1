@@ -1,17 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class Tower : MonoBehaviour {
-    private int cost; // purchase cost
-    private int damage; // per shot damage measure in health removed
-    private int range; // attack range
-    private int speed; // attack speed measured in shots per second
-    private int towerScoreValue; //score multiplier for tower
-    private int timeSinceLastShot;
-    private AttackPattern pattern;
-    private List<Upgrade> availableUpgrades; // all upgrades available to be added to this tower
-    private List<Upgrade> activeUpgrades; // all upgrades currently active on this tower
+    protected int cost; // purchase cost
+    protected int damage; // per shot damage measure in health removed
+    protected int range; // attack range
+    protected int speed; // attack speed measured in shots per second
+    protected int towerScoreValue; //score multiplier for tower
+    protected int timeSinceLastShot;
+    protected int rangeBuff;
+    protected int damageBuff;
+    protected int speedBuff;
+    protected AttackPattern pattern;
+    protected List<Upgrade> availableUpgrades; // all upgrades available to be added to this tower
+    protected List<Upgrade> activeUpgrades; // all upgrades currently active on this tower
     public GameObject bulletPrefab;
     public GameObject towerRange;
     public bool selected;
@@ -31,6 +35,9 @@ public class Tower : MonoBehaviour {
         damage = 50;
         speed = 1;
         timeSinceLastShot = 0;
+        rangeBuff = 0;
+        damageBuff = 0;
+        speedBuff = 0;
         pattern = AttackPattern.First;
         activeUpgrades = new List<Upgrade>();
         availableUpgrades = new List<Upgrade>();
@@ -48,6 +55,8 @@ public class Tower : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
+        ExtraActions();
+
         //show range
         if (selected)
             towerRange.GetComponent<MeshRenderer>().enabled = true;
@@ -137,18 +146,7 @@ public class Tower : MonoBehaviour {
 
         if (hasTarget)
         {
-            //run attack code
-            transform.LookAt(target.transform);
-            Debug.DrawLine(transform.position, target.transform.position);
-            if (timeSinceLastShot <= 0)
-            {
-                GameObject bullet = (GameObject)Instantiate(bulletPrefab, transform.position, transform.rotation);
-                bullet.GetComponent<Rigidbody>().velocity = transform.forward * 200.0f;
-                bullet.GetComponent<Bullet>().SetDamage(damage);
-                bullet.GetComponent<Bullet>().setScoreValue(towerScoreValue);
-                Destroy(bullet, 2);
-                timeSinceLastShot = 60 / speed;
-            }
+            Attack(target);
         }
         timeSinceLastShot--;
 
@@ -158,13 +156,45 @@ public class Tower : MonoBehaviour {
         {
             Destroy(target);
         }
-	}
+
+        //reset buffs after each tick
+        rangeBuff = 0;
+        damageBuff = 0;
+        speedBuff = 0;
+    }
 
     public void UpgradeTower()
     {
         /* 
          * TODO: Move first upgrade from availabeUpgrades to activeUpgrades
          */
+    }
+
+    protected virtual void Attack(GameObject target)
+    {
+        //run attack code
+        transform.LookAt(target.transform);
+        Debug.DrawLine(transform.position, target.transform.position);
+        if (timeSinceLastShot <= 0)
+        {
+            GameObject bullet = (GameObject)Instantiate(bulletPrefab, transform.position, transform.rotation);
+            bullet.GetComponent<Rigidbody>().velocity = transform.forward * 200.0f;
+            bullet.GetComponent<Bullet>().SetDamage(damage + damageBuff);
+            Destroy(bullet, 2);
+            timeSinceLastShot = 60 / (speed + speedBuff);
+        }
+    }
+
+    protected virtual void ExtraActions()
+    {
+        //tower has no extra actions
+    }
+
+    public void GiveBuff(double rangeBuffPercent, double damageBuffPercent, double speedBuffPercent)
+    {
+        rangeBuff += Convert.ToInt32(range * rangeBuffPercent);
+        damageBuff += Convert.ToInt32(damage * damageBuffPercent);
+        speedBuff += Convert.ToInt32(speed * speedBuffPercent);
     }
 
     //BEGIN getters
@@ -197,13 +227,13 @@ public class Tower : MonoBehaviour {
     //END setters
 
     //maybe this should be its own file? but we can do that later
-    private class Upgrade
+    protected class Upgrade
     {
         private int damageUp; // damage added to tower once upgrade is active
         private int rangeUp; // range added to tower once upgrade is active
         private int speedUp; // attack speed added to tower once upgrade is active
         private int cost; // cost to add this upgrade to the tower
-        private Upgrade(int rangeUp, int damageUp, int speedUp, int cost)
+        protected Upgrade(int rangeUp, int damageUp, int speedUp, int cost)
         {
             this.rangeUp = rangeUp;
             this.damageUp = damageUp;

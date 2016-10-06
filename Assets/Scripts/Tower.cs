@@ -7,12 +7,12 @@ public class Tower : MonoBehaviour {
     protected int cost; // purchase cost
     protected int damage; // per shot damage measure in health removed
     protected int range; // attack range
-    protected int speed; // attack speed measured in shots per second
+    protected double speed; // attack speed measured in shots per second
     protected int towerScoreValue; //score multiplier for tower
-    protected int timeSinceLastShot;
+    protected double timeSinceLastShot;
     protected int rangeBuff;
     protected int damageBuff;
-    protected int speedBuff;
+    protected double speedBuff;
     protected AttackPattern pattern;
     protected List<Upgrade> availableUpgrades; // all upgrades available to be added to this tower
     protected List<Upgrade> activeUpgrades; // all upgrades currently active on this tower
@@ -213,7 +213,7 @@ public class Tower : MonoBehaviour {
         return range;
     }
 
-    public int GetSpeed()
+    public double GetSpeed()
     {
         return speed;
     }

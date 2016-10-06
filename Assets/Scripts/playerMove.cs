@@ -23,10 +23,13 @@ public class playerMove : MonoBehaviour {
         //get input and move player
         float vert = Input.GetAxis("Vertical");
         float horiz = Input.GetAxis("Horizontal");
-
-        transform.Translate(0, 0, vert * Time.deltaTime * speed);
+        float strafe = Input.GetAxis("Strafe");
+        if (vert >0)
+            transform.Translate(strafe * 4 * Time.deltaTime, 0, vert * Time.deltaTime * speed);
+        else if (vert <0)
+            transform.Translate(strafe * 4 * Time.deltaTime, 0, vert * Time.deltaTime * speed/2);
         transform.Rotate(0, horiz * Time.deltaTime * turning, 0);
-	
+	    transform.Translate(strafe * 15 * Time.deltaTime, 0, 0);
 	}
     void OnTriggerEnter(Collider col)
     {

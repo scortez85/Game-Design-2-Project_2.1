@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SheriffTower : Tower
 {
+    public GameObject sherrifObj;
     public SheriffTower() : base()
     {
         cost = 500;
@@ -37,6 +38,9 @@ public class SheriffTower : Tower
             bullet.GetComponent<Bullet>().SetDamage(damage + damageBuff);
             Destroy(bullet, 2);
             timeSinceLastShot = 60 / (speed + speedBuff);
+            //transform.rotation = new Quaternion(0, 0, 0, 0);
+            //Debug.Log("Hit");
+            //sherrifObj.transform.LookAt(target.transform.position);
         }
     }
 }

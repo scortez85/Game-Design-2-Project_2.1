@@ -3,7 +3,7 @@ using System.Collections;
 
 public class selectableProp : MonoBehaviour {
 
-    public Vector3 propPos;
+    public Vector3 propPos,posOffset;
     public RaycastHit hit;
     bool ableToPlace = true;
     public GameObject obj;
@@ -28,7 +28,10 @@ public class selectableProp : MonoBehaviour {
         */
 
         Vector3 mousePos = Input.mousePosition;
-        mousePos.z = 136F;
+        if (obj.name.Equals("Tower 1"))
+            mousePos.z = 136F;
+        else if (obj.name.Equals("sherrifTowerObj"))
+            mousePos.z = 136f;
 
         Vector3 objPos = Camera.current.ScreenToWorldPoint(mousePos);
         transform.position = objPos;

@@ -16,6 +16,7 @@ public class playerAnimate : MonoBehaviour {
         //movement
         float vert = Input.GetAxis("Vertical");
         float horiz = Input.GetAxis("Horizontal");
+        float strafe = Input.GetAxis("Strafe");
 
         if (!vert.Equals(0))
         {
@@ -40,6 +41,9 @@ public class playerAnimate : MonoBehaviour {
         if (Input.GetButton("Jump"))
             ani.SetBool(hash.dance, true);
         else ani.SetBool(hash.dance, false);
+
+        //strafe
+        ani.SetFloat(hash.strafe, strafe);
 
     }
 }

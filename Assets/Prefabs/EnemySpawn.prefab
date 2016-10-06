@@ -51,8 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d36f6aa441058f42a2863011860d29e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnWaves: 0500000003000000
-  maxNumEnemies: 80
-  spawnSpeedInterval: 50
+  spawnWaves: 00000000050000001e000000
+  spawnSpeed: 0
+  numEnemies: 0
+  currentWave: 0
+  maxNumEnemies: 5
+  spawnSpeedInterval: 25
   totalNumEnemies: 0
-  enemPrefab: {fileID: 1000014057246942, guid: 7b0a941b9469b4a40aff055fc10192b8, type: 2}
+  enemPrefab: {fileID: 0}

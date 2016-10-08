@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class enemySpawn : MonoBehaviour {
 
@@ -19,7 +20,8 @@ public class enemySpawn : MonoBehaviour {
         if (currentWave < spawnWaves.Length)
         {
             setWave(currentWave + 1);
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<cameraController>().camAngle = 3; 
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<cameraController>().camAngle = 3;
+            GameObject.Find("crossHair").GetComponent<Image>().enabled = true;
         }
     }
 
@@ -36,6 +38,7 @@ public class enemySpawn : MonoBehaviour {
             enemiesKilled = 0;
             for (int k = 0; k < nuggets.Length; k++)
                 nuggets[k].GetComponent<nuggetValues>().moveToPlayer = true;
+            GameObject.Find("crossHair").GetComponent<Image>().enabled = false;
         }
     }
     void Start () {

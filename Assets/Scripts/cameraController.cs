@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class cameraController : MonoBehaviour {
     private GameObject cam, camThrird;
@@ -8,8 +9,11 @@ public class cameraController : MonoBehaviour {
     private Quaternion topDownCamRot;
     public int camAngle;
     private float camSpeed = 100;
+    private GameObject crosshair;
 
 	void Start () {
+        crosshair = GameObject.Find("crossHair");
+        crosshair.GetComponent<Image>().enabled = false;
         cam = GameObject.FindGameObjectWithTag("MainCamera");
         camThrird = GameObject.Find("thirdCam");
         topDownCamPos = new Vector3(0, 140, 0);
@@ -44,6 +48,7 @@ public class cameraController : MonoBehaviour {
             {
                 uiButtonsToHide[k].SetActive(true);
             }
+            //crosshair.GetComponent<Image>().enabled = false;
         }
      
     }
@@ -66,6 +71,7 @@ public class cameraController : MonoBehaviour {
             {
                 uiButtonsToHide[k].SetActive(false);
             }
+            //crosshair.GetComponent<Image>().enabled = true;
             //gameObject.GetComponent<cameraController>().enabled = false;
             camAngle = -1;
         }

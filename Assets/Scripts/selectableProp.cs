@@ -30,7 +30,7 @@ public class selectableProp : MonoBehaviour {
         Vector3 mousePos = Input.mousePosition;
         if (obj.name.Equals("Tower 1"))
             mousePos.z = 136F;
-        else if (obj.name.Equals("sherrifTowerObj"))
+        else if (obj.name.Equals("realSherrif"))
             mousePos.z = 136f;
 
         Vector3 objPos = Camera.current.ScreenToWorldPoint(mousePos);
@@ -50,7 +50,7 @@ public class selectableProp : MonoBehaviour {
             oldPos.x = col.transform.position.x;
             oldPos.z = col.transform.position.z;
             newTower.transform.position = oldPos;
-            newTower.name = "Tower";
+            newTower.name = obj.name;
             newTower.tag = "Tower";
             col.gameObject.GetComponent<towerPlacement>().setPlaceable(false);
             newTower.GetComponent<Tower>().selected = false;

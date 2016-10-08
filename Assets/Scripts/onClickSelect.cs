@@ -16,8 +16,12 @@ public class onClickSelect : MonoBehaviour {
 	}
     public void setPlaceableObj(int num)
     {
-        //placeableObj = name;
-        objIndex = num;
+        if (GetComponent<gameControl>().nuggets >= placableObjs[num].GetComponent<Tower>().GetCost())
+        {
+            objIndex = num;
+            GetComponent<gameControl>().setNugget(-placableObjs[num].GetComponent<Tower>().GetCost());
+        }
+
     }
 	
 	// Update is called once per frame
@@ -27,7 +31,11 @@ public class onClickSelect : MonoBehaviour {
         //remove props by right click
         if (Input.GetMouseButton(1))
             for (int k = 0; k < propList.Length; k++)
+            {
+                GetComponent<gameControl>().setNugget(placableObjs[k].GetComponent<Tower>().GetCost());
                 Destroy(propList[k]);
+                //Debug.Log(placableObjs[k].GetComponent<Tower>().GetCost());
+            }
 
         if (objIndex>=0)
         {

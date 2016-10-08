@@ -54,8 +54,8 @@ public class UserCamera : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButton(1))
         {
-            camAngle = 0;
-            target = GameObject.Find("Player").transform;
+            //camAngle = 0;
+            //target = GameObject.Find("Player").transform;
 
         }
         else

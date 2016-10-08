@@ -95,6 +95,8 @@ public class Enemy : MonoBehaviour {
             GameObject.Find("GameController").GetComponent<gameControl>().kills += 1;
            GameObject nuggetObj = (GameObject) Instantiate(nugget, transform.position, transform.rotation);
             nuggetObj.GetComponent<nuggetValues>().nuggetValue = Random.Range(nuggetMin, nuggetMax);
+            GameObject.Find("EnemySpawn").GetComponent<enemySpawn>().addKill();
+            return;
         }
     }
 }

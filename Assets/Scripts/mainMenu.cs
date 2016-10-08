@@ -28,6 +28,8 @@ public class mainMenu : MonoBehaviour{
             menuMain.GetComponent<Canvas>().enabled = false;
             menuLevelSel.GetComponent<Canvas>().enabled = true;
         }
+        else if (name.Equals("Play"))
+            Application.LoadLevel(1);
         else if (name.Equals("Exit"))
         {
             Application.Quit();

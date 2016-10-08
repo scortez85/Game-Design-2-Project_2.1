@@ -173,7 +173,7 @@ public class Tower : MonoBehaviour {
     protected virtual void Attack(GameObject target)
     {
         //run attack code
-        transform.LookAt(target.transform);
+            transform.LookAt(target.transform);
         Debug.DrawLine(transform.position, target.transform.position);
         if (timeSinceLastShot <= 0)
         {

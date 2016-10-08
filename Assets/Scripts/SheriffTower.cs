@@ -6,11 +6,12 @@ public class SheriffTower : Tower
     public GameObject sherrifObj;
     public SheriffTower() : base()
     {
-        cost = 500;
+        this.cost = 500;
         range = 30;
         damage = 50;
         speed = 2;
     }
+    
 
     protected override void ExtraActions()
     {

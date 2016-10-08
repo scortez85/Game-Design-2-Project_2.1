@@ -4,7 +4,7 @@ using System.Collections;
 public class enemySpawn : MonoBehaviour {
 
     public int[] spawnWaves;
-    public int spawnSpeed, numEnemies, currentWave; 
+    public int spawnSpeed, numEnemies, currentWave,enemiesKilled; 
     public int maxNumEnemies, spawnSpeedInterval, totalNumEnemies;
     public GameObject enemPrefab;
     private GameObject[] enem;
@@ -22,12 +22,43 @@ public class enemySpawn : MonoBehaviour {
             GameObject.FindGameObjectWithTag("GameController").GetComponent<cameraController>().camAngle = 3; 
         }
     }
+
+    void endWave()
+    {
+        //Debug.Log(spawnWaves[currentWave]);
+        //Debug.Log(enemiesKilled);
+
+        if (enemiesKilled == spawnWaves[currentWave] *2)
+        {
+            GameObject[] nuggets = GameObject.FindGameObjectsWithTag("Nugget");
+            //Debug.Log("end;");
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<cameraController>().camAngle = 2;
+            enemiesKilled = 0;
+            for (int k = 0; k < nuggets.Length; k++)
+                nuggets[k].GetComponent<nuggetValues>().moveToPlayer = true;
+        }
+    }
     void Start () {
             //setWave(1);//use setWave to generate each new wave of enemies 
     }
 
     // Update is called once per frame
+    void LateUpdate()
+    {
+        if (currentWave == spawnWaves.Length-1 && numEnemies - enemiesKilled/2 == 0)
+            Debug.Log("You win");//add winning screen
+        if (currentWave < spawnWaves.Length)
+            endWave();
+        
+    }
+    public void addKill()
+    {
+        enemiesKilled += 1;
+        return;
+    }
     void Update () {
+
+        
         if (spawnSpeed < spawnSpeedInterval && numEnemies < maxNumEnemies)
             spawnSpeed++;
 

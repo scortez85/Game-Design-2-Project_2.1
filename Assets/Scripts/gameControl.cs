@@ -11,11 +11,14 @@ public class gameControl : MonoBehaviour {
     public gameControl()
     {
         this.health = 100;
+        this.nuggets = 200;
 
     }
 	void Start () {
-	
-	}
+        this.health = 100;
+        this.nuggets = 600;
+
+    }
     public void setScore(int value)
     {
         score += value;

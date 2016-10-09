@@ -332,7 +332,7 @@ ModelImporter:
     - serializedVersion: 16
       name: standRifle
       takeName: mixamo.com
-      firstFrame: 39
+      firstFrame: 36
       lastFrame: 39
       wrapMode: 0
       orientationOffsetY: 0

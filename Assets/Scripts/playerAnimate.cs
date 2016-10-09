@@ -4,6 +4,7 @@ using System.Collections;
 public class playerAnimate : MonoBehaviour {
     public Animator ani;
     public HashID hash;
+    public bool winRound;
     
 	void Start () {
         ani = GetComponent<Animator>();
@@ -38,7 +39,7 @@ public class playerAnimate : MonoBehaviour {
         }
 
         //dance
-        if (Input.GetButton("Jump"))
+        if (Input.GetButton("Jump") || winRound)
             ani.SetBool(hash.dance, true);
         else ani.SetBool(hash.dance, false);
 

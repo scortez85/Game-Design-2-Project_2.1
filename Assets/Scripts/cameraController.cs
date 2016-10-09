@@ -26,6 +26,7 @@ public class cameraController : MonoBehaviour {
         {
             cam.transform.position = topDownCamPos;
             cam.transform.rotation = topDownCamRot;
+            //GameObject.FindGameObjectWithTag("Player").GetComponent<playerAnimate>().winRound = true;
         }
         else if (num.Equals(1))
         {
@@ -36,7 +37,8 @@ public class cameraController : MonoBehaviour {
         {
             cam.transform.position = Vector3.MoveTowards(cam.transform.position, topDownCamPos, camSpeed * Time.deltaTime);
             cam.transform.rotation = topDownCamRot;
-            
+            //GameObject.FindGameObjectWithTag("Player").GetComponent<playerAnimate>().winRound = true;
+
         }
         else if (num.Equals(3) || num.Equals(-1))
         {

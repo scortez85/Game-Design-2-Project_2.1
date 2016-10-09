@@ -39,6 +39,7 @@ public class enemySpawn : MonoBehaviour {
             for (int k = 0; k < nuggets.Length; k++)
                 nuggets[k].GetComponent<nuggetValues>().moveToPlayer = true;
             GameObject.Find("crossHair").GetComponent<Image>().enabled = false;
+            
         }
     }
     void Start () {

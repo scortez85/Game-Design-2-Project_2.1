@@ -70,7 +70,7 @@ public class UserCamera : MonoBehaviour {
 			if(inFirstPerson == true) {
 				
 				minDistance = 10;
-				desiredDistance = 15;
+			    desiredDistance = 15;
 				userModel.SetActive(true);
 				inFirstPerson = false;
 			}

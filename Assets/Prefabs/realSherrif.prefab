@@ -422,6 +422,7 @@ GameObject:
   - 23: {fileID: 23000011744396548}
   - 114: {fileID: 114000011126454692}
   - 114: {fileID: 114000012220573630}
+  - 114: {fileID: 114000013133680016}
   m_Layer: 0
   m_Name: realSherrif
   m_TagString: Tower
@@ -1223,7 +1224,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011526217006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -104.56948, y: 4, z: 23.746536}
+  m_LocalPosition: {x: 2.0399828, y: 4, z: 57.945095}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -2490,7 +2491,21 @@ MonoBehaviour:
     type: 2}
   towerRange: {fileID: 1000010608719498}
   selected: 0
-  sherrifObj: {fileID: 0}
+  sherrifObj: {fileID: 1000011964982674}
+  ani: {fileID: 0}
+  sherrifHashId: {fileID: 0}
+--- !u!114 &114000013133680016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011526217006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6106f370ab58da54787b42b246579e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasTarget: 0
 --- !u!136 &136000010725485700
 CapsuleCollider:
   m_ObjectHideFlags: 1

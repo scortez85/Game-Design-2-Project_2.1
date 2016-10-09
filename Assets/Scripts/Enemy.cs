@@ -42,8 +42,8 @@ public class Enemy : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
         target = GameObject.Find("EnemyGoal").transform;
-        nuggetMin = 1;
-        nuggetMax = 5;
+        nuggetMin = 10;
+        nuggetMax = 40;
     }
     void Update()
     {

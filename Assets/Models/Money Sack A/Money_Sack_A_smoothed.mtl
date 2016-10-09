@@ -1,0 +1,92 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 25.08.2015 10:25:54
+
+newmtl wire_000000000
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 0.000000000000 0.000000000000 0.000000000000
+	Kd 0.000000000000 0.000000000000 0.000000000000
+	Ks 0.349999994040 0.349999994040 0.349999994040
+
+newmtl Money_Sack_A1_Standard
+	Ns 0.000000000000
+	Ni 1.500000000000
+	d 1.000000000000
+	Tr 0.000000000000
+	Tf 1.000000000000 1.000000000000 1.000000000000 
+	illum 2
+	Ka 0.587999999523 0.587999999523 0.587999999523
+	Kd 0.587999999523 0.587999999523 0.587999999523
+	Ks 0.000000000000 0.000000000000 0.000000000000
+	Ke 0.000000000000 0.000000000000 0.000000000000
+	map_Ka C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A1_dif.tga
+	map_Kd C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A1_dif.tga
+	map_bump C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A_bump.tga
+	bump C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A_bump.tga
+
+newmtl Money_Sack_A2_Standard
+	Ns 0.000000000000
+	Ni 1.500000000000
+	d 1.000000000000
+	Tr 0.000000000000
+	Tf 1.000000000000 1.000000000000 1.000000000000 
+	illum 2
+	Ka 0.587999999523 0.587999999523 0.587999999523
+	Kd 0.587999999523 0.587999999523 0.587999999523
+	Ks 0.000000000000 0.000000000000 0.000000000000
+	Ke 0.000000000000 0.000000000000 0.000000000000
+	map_Ka C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A2_dif.tga
+	map_Kd C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A2_dif.tga
+	map_bump C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A_bump.tga
+	bump C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A_bump.tga
+
+newmtl Money_Sack_A3_Standard
+	Ns 0.000000000000
+	Ni 1.500000000000
+	d 1.000000000000
+	Tr 0.000000000000
+	Tf 1.000000000000 1.000000000000 1.000000000000 
+	illum 2
+	Ka 0.587999999523 0.587999999523 0.587999999523
+	Kd 0.587999999523 0.587999999523 0.587999999523
+	Ks 0.000000000000 0.000000000000 0.000000000000
+	Ke 0.000000000000 0.000000000000 0.000000000000
+	map_Ka C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A3_dif.tga
+	map_Kd C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A3_dif.tga
+	map_bump C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A_bump.tga
+	bump C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A_bump.tga
+
+newmtl Money_Sack_A4_Standard
+	Ns 0.000000000000
+	Ni 1.500000000000
+	d 1.000000000000
+	Tr 0.000000000000
+	Tf 1.000000000000 1.000000000000 1.000000000000 
+	illum 2
+	Ka 0.587999999523 0.587999999523 0.587999999523
+	Kd 0.587999999523 0.587999999523 0.587999999523
+	Ks 0.000000000000 0.000000000000 0.000000000000
+	Ke 0.000000000000 0.000000000000 0.000000000000
+	map_Ka C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A4_dif.tga
+	map_Kd C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A4_dif.tga
+	map_bump C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A_bump.tga
+	bump C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A_bump.tga
+
+newmtl Money_Sack_A5_Standard
+	Ns 0.000000000000
+	Ni 1.500000000000
+	d 1.000000000000
+	Tr 0.000000000000
+	Tf 1.000000000000 1.000000000000 1.000000000000 
+	illum 2
+	Ka 0.587999999523 0.587999999523 0.587999999523
+	Kd 0.587999999523 0.587999999523 0.587999999523
+	Ks 0.000000000000 0.000000000000 0.000000000000
+	Ke 0.000000000000 0.000000000000 0.000000000000
+	map_Ka C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A5_dif.tga
+	map_Kd C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A5_dif.tga
+	map_bump C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A_bump.tga
+	bump C:\3d_models_2012_sirin_3d\_MONEY\_Money_Sack_A\Map\Money_Sack_A_bump.tga

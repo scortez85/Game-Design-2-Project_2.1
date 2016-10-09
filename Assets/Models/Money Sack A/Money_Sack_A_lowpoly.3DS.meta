@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: 939fff12fac6a814389566c74b9fff38
+timeCreated: 1476023378
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Ground_Pla
+    100002: Light.target
+    100004: Money_Sa10
+    100006: Money_Sa11
+    100008: Money_Sa12
+    100010: Money_Sa13
+    100012: Money_Sa14
+    100014: Money_Sa15
+    100016: Money_Sa16
+    100018: Money_Sa17
+    100020: Money_Sa18
+    100022: Money_Sac0
+    100024: Money_Sac1
+    100026: Money_Sac2
+    100028: Money_Sac3
+    100030: Money_Sac4
+    100032: Money_Sac5
+    100034: Money_Sac6
+    100036: Money_Sac7
+    100038: Money_Sac8
+    100040: Money_Sac9
+    100042: Money_Sack
+    100044: //RootNode
+    400000: Ground_Pla
+    400002: Light.target
+    400004: Money_Sa10
+    400006: Money_Sa11
+    400008: Money_Sa12
+    400010: Money_Sa13
+    400012: Money_Sa14
+    400014: Money_Sa15
+    400016: Money_Sa16
+    400018: Money_Sa17
+    400020: Money_Sa18
+    400022: Money_Sac0
+    400024: Money_Sac1
+    400026: Money_Sac2
+    400028: Money_Sac3
+    400030: Money_Sac4
+    400032: Money_Sac5
+    400034: Money_Sac6
+    400036: Money_Sac7
+    400038: Money_Sac8
+    400040: Money_Sac9
+    400042: Money_Sack
+    400044: //RootNode
+    2300000: Ground_Pla
+    2300002: Money_Sa10
+    2300004: Money_Sa12
+    2300006: Money_Sa13
+    2300008: Money_Sa14
+    2300010: Money_Sa16
+    2300012: Money_Sa17
+    2300014: Money_Sa18
+    2300016: Money_Sac0
+    2300018: Money_Sac1
+    2300020: Money_Sac2
+    2300022: Money_Sac4
+    2300024: Money_Sac5
+    2300026: Money_Sac6
+    2300028: Money_Sac8
+    2300030: Money_Sac9
+    3300000: Ground_Pla
+    3300002: Money_Sa10
+    3300004: Money_Sa12
+    3300006: Money_Sa13
+    3300008: Money_Sa14
+    3300010: Money_Sa16
+    3300012: Money_Sa17
+    3300014: Money_Sa18
+    3300016: Money_Sac0
+    3300018: Money_Sac1
+    3300020: Money_Sac2
+    3300022: Money_Sac4
+    3300024: Money_Sac5
+    3300026: Money_Sac6
+    3300028: Money_Sac8
+    3300030: Money_Sac9
+    4300000: Ground_Pla
+    4300002: Money_Sac0
+    4300004: Money_Sac1
+    4300006: Money_Sac2
+    4300008: Money_Sac4
+    4300010: Money_Sac5
+    4300012: Money_Sac6
+    4300014: Money_Sac8
+    4300016: Money_Sac9
+    4300018: Money_Sa10
+    4300020: Money_Sa12
+    4300022: Money_Sa13
+    4300024: Money_Sa14
+    4300026: Money_Sa16
+    4300028: Money_Sa17
+    4300030: Money_Sa18
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

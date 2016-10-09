@@ -4,14 +4,22 @@ using System.Collections;
 public class SheriffTower : Tower
 {
     public GameObject sherrifObj;
+    public Animator ani;
+    public sherrifHash sherrifHashId;
+
     public SheriffTower() : base()
     {
+
         this.cost = 500;
         range = 30;
         damage = 50;
         speed = 2;
     }
-    
+    void Start()
+    {
+        ani = GetComponent<SheriffTower>().sherrifObj.GetComponent<Animator>();
+        sherrifHashId = GetComponent<sherrifHash>();
+    }
 
     protected override void ExtraActions()
     {
@@ -42,6 +50,12 @@ public class SheriffTower : Tower
             //transform.rotation = new Quaternion(0, 0, 0, 0);
             //Debug.Log("Hit");
             //sherrifObj.transform.LookAt(target.transform.position);
+            
         }
+        ani.SetBool(sherrifHashId.hasTarget, true);
+    }
+    void LateUpdate()
+    {
+        ani.SetBool(sherrifHashId.hasTarget, false);
     }
 }

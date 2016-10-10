@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Levels/mainMenu.unity
   - enabled: 1
     path: Assets/Levels/map1.unity
+  - enabled: 1
+    path: Assets/Levels/winningLevel.unity

@@ -8,6 +8,9 @@ public class Enemy : MonoBehaviour {
     private string enemyType;
     private NavMeshAgent agent;
     public GameObject healthText,nugget;
+    private AudioSource enemSfx;
+    public AudioClip enemDeath,enemNorm;
+    public int randSfxNum,sfxTime;
 
 
     public Enemy()
@@ -40,13 +43,24 @@ public class Enemy : MonoBehaviour {
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        enemSfx = GetComponent<AudioSource>();
         agent.speed = speed;
         target = GameObject.Find("EnemyGoal").transform;
         nuggetMin = 10;
         nuggetMax = 40;
+        randSfxNum = Random.Range(100, 500);
     }
     void Update()
     {
+        //sound 
+        if (sfxTime < 500)
+            sfxTime++;
+        if (sfxTime.Equals(randSfxNum))
+        {
+            enemSfx.Play();
+            sfxTime = 0;
+        }
+
         agent.SetDestination(target.position);
         if (!agent.pathPending)
         {
@@ -76,7 +90,15 @@ public class Enemy : MonoBehaviour {
             health-=col.gameObject.GetComponent<Bullet>().GetDamage();
             col.gameObject.GetComponent<Bullet>().SubrtractHealth(1);
             GameObject.Find("GameController").GetComponent<gameControl>().setScore(col.gameObject.GetComponent<Bullet>().getScoreValue());
+            enemSfx.clip = enemDeath;
+            enemSfx.Play();
         }
+
+    }
+    void OnCollisionExit()
+    {
+        enemSfx.clip = enemNorm;
+
     }
 
     public float GetDistanceToEnd()
@@ -90,6 +112,7 @@ public class Enemy : MonoBehaviour {
     }
     public void OnDestroy()
     {
+        
         //send value to gamecontroller
         {
             GameObject.Find("GameController").GetComponent<gameControl>().kills += 1;

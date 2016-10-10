@@ -6,6 +6,8 @@ public class SheriffTower : Tower
     public GameObject sherrifObj;
     public Animator ani;
     public sherrifHash sherrifHashId;
+    public AudioSource audioScource;
+    public AudioClip shotSound;
 
     public SheriffTower() : base()
     {
@@ -19,6 +21,8 @@ public class SheriffTower : Tower
     {
         ani = GetComponent<SheriffTower>().sherrifObj.GetComponent<Animator>();
         sherrifHashId = GetComponent<sherrifHash>();
+        audioScource = GetComponent<AudioSource>();
+        audioScource.clip = shotSound;
     }
 
     protected override void ExtraActions()
@@ -52,6 +56,7 @@ public class SheriffTower : Tower
             //sherrifObj.transform.LookAt(target.transform.position);
             
         }
+        audioScource.Play();
         ani.SetBool(sherrifHashId.hasTarget, true);
     }
     void LateUpdate()

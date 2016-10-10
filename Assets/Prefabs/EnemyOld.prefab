@@ -3308,6 +3308,7 @@ GameObject:
   - 23: {fileID: 23000010485372028}
   - 114: {fileID: 114000011084360180}
   - 195: {fileID: 195000011563520134}
+  - 82: {fileID: 82000012159876660}
   m_Layer: 0
   m_Name: EnemyOld
   m_TagString: Enemy
@@ -9794,6 +9795,80 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &82000012159876660
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014081065368}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5f098fbdb0e42be418c86f14d9cbedda, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95000013280890734
 Animator:
   serializedVersion: 3
@@ -9863,6 +9938,10 @@ MonoBehaviour:
   target: {fileID: 0}
   healthText: {fileID: 1000013885296574}
   nugget: {fileID: 1000012613954178, guid: adfb781663538e6489152941a3720685, type: 2}
+  enemDeath: {fileID: 8300000, guid: dfa73ece07ca6144fa534c5a3b5dcb10, type: 3}
+  enemNorm: {fileID: 8300000, guid: 5f098fbdb0e42be418c86f14d9cbedda, type: 3}
+  randSfxNum: 0
+  sfxTime: 0
 --- !u!114 &114000012006154872
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9877,6 +9956,10 @@ MonoBehaviour:
   target: {fileID: 0}
   healthText: {fileID: 0}
   nugget: {fileID: 1000012613954178, guid: adfb781663538e6489152941a3720685, type: 2}
+  enemDeath: {fileID: 0}
+  enemNorm: {fileID: 0}
+  randSfxNum: 0
+  sfxTime: 0
 --- !u!137 &137000010110959644
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

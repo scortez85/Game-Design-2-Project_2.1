@@ -16,7 +16,7 @@ public class gameControl : MonoBehaviour {
     }
 	void Start () {
         this.health = 100;
-        this.nuggets = 600;
+        this.nuggets = 200;
 
     }
     public void setScore(int value)

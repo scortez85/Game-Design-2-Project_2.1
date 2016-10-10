@@ -49,8 +49,11 @@ public class enemySpawn : MonoBehaviour {
     // Update is called once per frame
     void LateUpdate()
     {
-        if (currentWave == spawnWaves.Length-1 && numEnemies - enemiesKilled/2 == 0)
-            Debug.Log("You win");//add winning screen
+        if (currentWave == spawnWaves.Length - 1 && numEnemies - enemiesKilled / 2 == 0)
+        {
+            //Debug.Log("You win");//add winning screen
+            Application.LoadLevel(2);
+        }
         if (currentWave < spawnWaves.Length)
             endWave();
         

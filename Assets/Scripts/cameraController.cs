@@ -12,6 +12,7 @@ public class cameraController : MonoBehaviour {
     private GameObject crosshair;
 
 	void Start () {
+        DontDestroyOnLoad(gameObject);
         crosshair = GameObject.Find("crossHair");
         crosshair.GetComponent<Image>().enabled = false;
         cam = GameObject.FindGameObjectWithTag("MainCamera");

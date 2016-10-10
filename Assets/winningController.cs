@@ -6,12 +6,7 @@ public class winningController : MonoBehaviour {
     public GameObject health, score, kills, towers, nugget;
     public GameObject cntrl;
 	void Start () {
-        //cntrl = GameObject.FindGameObjectWithTag("GameController");
-        //health = cntrl.GetComponent<gameControl>().healthText;
-       // score = cntrl.GetComponent<gameControl>().scoreText;
-       // kills = cntrl.GetComponent<gameControl>().killText;
-        //towers = cntrl.GetComponent<gameControl>().towerText;
-       // nugget = cntrl.GetComponent<gameControl>().nuggetText;
+        
 
     }
 	public void restartGame()
@@ -20,6 +15,11 @@ public class winningController : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        cntrl = GameObject.FindGameObjectWithTag("GameController");
+        cntrl.GetComponent<gameControl>().healthText = health;
+        cntrl.GetComponent<gameControl>().scoreText = score;
+        cntrl.GetComponent<gameControl>().killText = kills;
+        cntrl.GetComponent<gameControl>().towerText = towers;
+        cntrl.GetComponent<gameControl>().nuggetText = nugget;
+    }
 }

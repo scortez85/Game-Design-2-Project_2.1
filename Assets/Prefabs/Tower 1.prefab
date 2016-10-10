@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fea468f36448c40a96f071e0b1bf97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1000013222643500, guid: bc3f77564bd423844825f3e95967d110,
+  bulletPrefab: {fileID: 1000011548912872, guid: 2b61bc8335e3f45479b37902aaab032e,
     type: 2}
   towerRange: {fileID: 1000013498636464}
   selected: 0

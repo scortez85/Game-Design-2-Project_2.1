@@ -49,6 +49,13 @@ public class enemySpawn : MonoBehaviour {
     // Update is called once per frame
     void LateUpdate()
     {
+        /*
+        for (int k = 0; k < enem.Length; k++)
+        {
+            enem[k].GetComponent<NavMeshAgent>().speed += (currentWave/0.05f);
+            enem[k].GetComponent<Enemy>().setHealth(100 + (currentWave * 25 ));
+        }
+        */
         if (currentWave == spawnWaves.Length - 1 && numEnemies - enemiesKilled / 2 == 0)
         {
             //Debug.Log("You win");//add winning screen
@@ -64,12 +71,13 @@ public class enemySpawn : MonoBehaviour {
         return;
     }
     void Update () {
-
+        enem = GameObject.FindGameObjectsWithTag("Enemy");
+        
         
         if (spawnSpeed < spawnSpeedInterval && numEnemies < maxNumEnemies)
             spawnSpeed++;
 
-        enem = GameObject.FindGameObjectsWithTag("Enemy");
+        
 
         {
                 if (spawnSpeed.Equals(spawnSpeedInterval) &&

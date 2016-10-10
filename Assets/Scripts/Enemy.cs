@@ -49,6 +49,10 @@ public class Enemy : MonoBehaviour {
         nuggetMin = 10;
         nuggetMax = 40;
         randSfxNum = Random.Range(100, 500);
+
+        //set speed and health increment
+        GetComponent<NavMeshAgent>().speed += (GameObject.Find("EnemySpawn").GetComponent<enemySpawn>().currentWave ^ 25);
+        setHealth((100 + GameObject.Find("EnemySpawn").GetComponent<enemySpawn>().currentWave * 25));
     }
     void Update()
     {
@@ -109,6 +113,10 @@ public class Enemy : MonoBehaviour {
     public int GetHealth()
     {
         return health;
+    }
+    public void setHealth(int value)
+    {
+        health = value;
     }
     public void OnDestroy()
     {

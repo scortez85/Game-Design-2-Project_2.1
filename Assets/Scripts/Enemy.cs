@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour {
     private AudioSource enemSfx;
     public AudioClip enemDeath,enemNorm;
     public int randSfxNum,sfxTime;
+    public float navTime;
 
 
     public Enemy()
@@ -42,6 +43,7 @@ public class Enemy : MonoBehaviour {
     }
     void Start()
     {
+        navTime = 20;
         agent = GetComponent<NavMeshAgent>();
         enemSfx = GetComponent<AudioSource>();
         agent.speed = speed;
@@ -56,6 +58,12 @@ public class Enemy : MonoBehaviour {
     }
     void Update()
     {
+        if (navTime > 0)
+            navTime--;
+
+        setPath();
+
+        //InvokeRepeating("setPath", 50.0f, 100.0f);
         //sound 
         if (sfxTime < 500)
             sfxTime++;
@@ -65,7 +73,7 @@ public class Enemy : MonoBehaviour {
             sfxTime = 0;
         }
 
-        agent.SetDestination(target.position);
+        //agent.SetDestination(target.position);
         if (!agent.pathPending)
         {
             if (agent.remainingDistance <= agent.stoppingDistance)
@@ -128,6 +136,20 @@ public class Enemy : MonoBehaviour {
             nuggetObj.GetComponent<nuggetValues>().nuggetValue = Random.Range(nuggetMin, nuggetMax);
             GameObject.Find("EnemySpawn").GetComponent<enemySpawn>().addKill();
             return;
+        }
+    }
+
+    void LateUpdate()
+    {
+    }
+
+    //set path
+    public void setPath()
+    {
+        if (navTime < 50)
+        {
+            agent.SetDestination(target.position);
+            navTime = 250;
         }
     }
 }

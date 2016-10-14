@@ -30,7 +30,7 @@ public class gameControl : MonoBehaviour {
     
     public void setNugget(int value)
     {
-        nuggets += value;
+        this.nuggets += value;
     }
 	
 	// Update is called once per frame

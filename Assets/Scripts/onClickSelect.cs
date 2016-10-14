@@ -7,6 +7,7 @@ public class onClickSelect : MonoBehaviour {
     public Ray ray;
     public GameObject[] objProps,placableObjs;
     public int objIndex = -1;
+    public int propType;
     //public string placeableObj;
     public GameObject tower;
     public GameObject[] propList;
@@ -16,11 +17,18 @@ public class onClickSelect : MonoBehaviour {
 	}
     public void setPlaceableObj(int num)
     {
-        if (GetComponent<gameControl>().nuggets >= placableObjs[num].GetComponent<Tower>().GetCost())
+        propType = num;
+        if (GetComponent<gameControl>().nuggets >= 100 && num == 0)
         {
             objIndex = num;
-            GetComponent<gameControl>().setNugget(-placableObjs[num].GetComponent<Tower>().GetCost());
+            GetComponent<gameControl>().setNugget(-placableObjs[num].GetComponent<Tower>().GetCost() );
         }
+        else if (GetComponent<gameControl>().nuggets >= 200 && num ==1)
+        {
+            objIndex = num;
+            GetComponent<gameControl>().setNugget(-placableObjs[num].GetComponent<Tower>().GetCost() * 2);
+        }
+        
 
     }
 	
@@ -32,7 +40,10 @@ public class onClickSelect : MonoBehaviour {
         if (Input.GetMouseButton(1))
             for (int k = 0; k < propList.Length; k++)
             {
-                GetComponent<gameControl>().setNugget(placableObjs[k].GetComponent<Tower>().GetCost());
+                if (propType == 0)
+                    GetComponent<gameControl>().setNugget(placableObjs[k].GetComponent<Tower>().GetCost());
+                else
+                    GetComponent<gameControl>().setNugget(placableObjs[k].GetComponent<Tower>().GetCost() * 2);
                 Destroy(propList[k]);
                 //Debug.Log(placableObjs[k].GetComponent<Tower>().GetCost());
             }

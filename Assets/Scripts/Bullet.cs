@@ -52,4 +52,9 @@ public class Bullet : MonoBehaviour {
         return this.scoreValue;
     }
     
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.name != "Player")
+            Destroy(gameObject);    
+    }
 }

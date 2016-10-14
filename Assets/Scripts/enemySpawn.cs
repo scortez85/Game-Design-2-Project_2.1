@@ -30,7 +30,7 @@ public class enemySpawn : MonoBehaviour {
         //Debug.Log(spawnWaves[currentWave]);
         //Debug.Log(enemiesKilled);
 
-        if (enemiesKilled == spawnWaves[currentWave] *2)
+        if (enemiesKilled == spawnWaves[currentWave] *2 || GameObject.Find("GameController").GetComponent<gameControl>().health == 0)
         {
             GameObject[] nuggets = GameObject.FindGameObjectsWithTag("Nugget");
             //Debug.Log("end;");
@@ -56,7 +56,7 @@ public class enemySpawn : MonoBehaviour {
             enem[k].GetComponent<Enemy>().setHealth(100 + (currentWave * 25 ));
         }
         */
-        if (currentWave == spawnWaves.Length - 1 && numEnemies - enemiesKilled / 2 == 0)
+        if (currentWave == spawnWaves.Length - 1 && numEnemies - enemiesKilled / 2 == 0 || GameObject.Find("GameController").GetComponent<gameControl>().health <= 0)
         {
             //Debug.Log("You win");//add winning screen
             Application.LoadLevel(2);

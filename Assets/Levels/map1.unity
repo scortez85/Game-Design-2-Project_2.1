@@ -16332,7 +16332,7 @@ Prefab:
     - target: {fileID: 114000012071170470, guid: 368e6af794b6bcd498a64cb48b556286,
         type: 2}
       propertyPath: spawnWaves.Array.size
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4000012295223838, guid: 368e6af794b6bcd498a64cb48b556286, type: 2}
       propertyPath: m_LocalPosition.x
@@ -16380,12 +16380,12 @@ Prefab:
     - target: {fileID: 114000012071170470, guid: 368e6af794b6bcd498a64cb48b556286,
         type: 2}
       propertyPath: spawnWaves.Array.data[3]
-      value: 40
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114000012071170470, guid: 368e6af794b6bcd498a64cb48b556286,
         type: 2}
       propertyPath: spawnWaves.Array.data[4]
-      value: 60
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114000012071170470, guid: 368e6af794b6bcd498a64cb48b556286,
         type: 2}
@@ -16395,17 +16395,17 @@ Prefab:
     - target: {fileID: 114000012071170470, guid: 368e6af794b6bcd498a64cb48b556286,
         type: 2}
       propertyPath: spawnWaves.Array.data[5]
-      value: 80
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114000012071170470, guid: 368e6af794b6bcd498a64cb48b556286,
         type: 2}
       propertyPath: spawnWaves.Array.data[6]
-      value: 100
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114000012071170470, guid: 368e6af794b6bcd498a64cb48b556286,
         type: 2}
       propertyPath: spawnWaves.Array.data[7]
-      value: 120
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114000012071170470, guid: 368e6af794b6bcd498a64cb48b556286,
         type: 2}
